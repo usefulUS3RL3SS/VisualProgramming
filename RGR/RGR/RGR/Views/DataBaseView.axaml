@@ -1,0 +1,121 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RGR.Views.DataBaseView">
+
+	<DockPanel>
+		<Menu Background="#A64B00" DockPanel.Dock="Top" VerticalAlignment="Center">
+			<MenuItem Header="File" Foreground="White">
+				<MenuItem Header="Load" Background="#A62500" Foreground="White"/>
+				<MenuItem Header="Save" Background="#A62500" Foreground="White"/>
+				<MenuItem Header="Exit" Background="#A62500" Foreground="White"/>
+			</MenuItem>
+			<Separator/>
+			<MenuItem Header="About" Foreground="White"/>
+			<Separator/>
+			<MenuItem Header="Request" Foreground="White"/>
+			<Separator/>
+			<MenuItem Header="Table" Foreground="White">
+				<MenuItem Header="Edit row" Background="#A62500" Foreground="White"/>
+				<MenuItem Header="New row" Background="#A62500" Foreground="White"/>
+				<MenuItem Header="Delete row" Background="#A62500" Foreground="White"/>
+			</MenuItem>
+		</Menu>
+
+		<ScrollViewer>
+			<TabControl>
+				<TabItem Header="PLAYER" VerticalContentAlignment="Center" Background="#F7D7AD">
+					<Grid>
+						<DataGrid Items="{Binding $parent[Window].DataContext.Players}">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+								<DataGridTextColumn Header="NAME" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="AGE" Binding="{Binding Age}"/>
+								<DataGridTextColumn Header="POSITION" Binding="{Binding Position}"/>
+								<DataGridTextColumn Header="ID COUNTRY" Binding="{Binding IdCountry}"/>
+								<DataGridTextColumn Header="ID TEAM" Binding="{Binding IdTeam}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>
+
+				<TabItem Header="COUNTRY" VerticalContentAlignment="Center" Background="#F7D7AD">
+					<Grid>
+						<DataGrid Items="{Binding $parent[Window].DataContext.Countries}">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+								<DataGridTextColumn Header="NAME COUNTRY" Binding="{Binding NameCountry}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>
+
+				<TabItem Header="TEAM" VerticalContentAlignment="Center" Background="#F7D7AD">
+					<Grid>
+						<DataGrid Items="{Binding $parent[Window].DataContext.Teams}">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+								<DataGridTextColumn Header="NAME" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="G" Binding="{Binding G}"/>
+								<DataGridTextColumn Header="MP" Binding="{Binding Mp}"/>
+								<DataGridTextColumn Header="FG" Binding="{Binding Fg}"/>
+								<DataGridTextColumn Header="FGA" Binding="{Binding Fga}"/>
+								<DataGridTextColumn Header="FG%" Binding="{Binding FgPercent}"/>
+								<DataGridTextColumn Header="3P" Binding="{Binding _3p}"/>
+								<DataGridTextColumn Header="3PA" Binding="{Binding _3pa}"/>
+								<DataGridTextColumn Header="3P%" Binding="{Binding _3pPercent}"/>
+								<DataGridTextColumn Header="2P" Binding="{Binding _2p}"/>
+								<DataGridTextColumn Header="2PA" Binding="{Binding _2pa}"/>
+								<DataGridTextColumn Header="2P%" Binding="{Binding _2pPercent}"/>
+								<DataGridTextColumn Header="FT" Binding="{Binding Ft}"/>
+								<DataGridTextColumn Header="FTA" Binding="{Binding Fta}"/>
+								<DataGridTextColumn Header="FT%" Binding="{Binding FtPercent}"/>
+								<DataGridTextColumn Header="ORB" Binding="{Binding Orb}"/>
+								<DataGridTextColumn Header="DRB" Binding="{Binding Drb}"/>
+								<DataGridTextColumn Header="TRB" Binding="{Binding Trb}"/>
+								<DataGridTextColumn Header="AST" Binding="{Binding Ast}"/>
+								<DataGridTextColumn Header="STL" Binding="{Binding Stl}"/>
+								<DataGridTextColumn Header="BLK" Binding="{Binding Blk}"/>
+								<DataGridTextColumn Header="TOV" Binding="{Binding Tov}"/>
+								<DataGridTextColumn Header="PF" Binding="{Binding Pf}"/>
+								<DataGridTextColumn Header="PTS" Binding="{Binding Pts}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>
+
+				<TabItem Header="LEAGUE" VerticalContentAlignment="Center" Background="#F7D7AD">
+					<Grid>
+						<DataGrid Items="{Binding $parent[Window].DataContext.Leagues}">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+								<DataGridTextColumn Header="NAME LEAGUE" Binding="{Binding Name}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>
+
+				<TabItem Header="RESULT" VerticalContentAlignment="Center" Background="#F7D7AD">
+					<Grid>
+						<DataGrid Items="{Binding $parent[Window].DataContext.Results}">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID LEAGUE" Binding="{Binding IdLeague}"/>
+								<DataGridTextColumn Header="ID TEAM" Binding="{Binding IdTeam}"/>
+								<DataGridTextColumn Header="PLACE" Binding="{Binding Place}"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</TabItem>
+
+			</TabControl>
+		</ScrollViewer>
+
+	</DockPanel>
+	
+	
+	
+	
+	
+</UserControl>
